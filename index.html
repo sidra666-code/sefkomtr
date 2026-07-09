@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mebsis</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    background:linear-gradient(-45deg,#0f172a,#1e3a8a,#2563eb,#38bdf8);
+    background-size:400% 400%;
+    animation:bg 10s ease infinite;
+}
+
+@keyframes bg{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.card{
+    width:90%;
+    max-width:420px;
+    padding:35px;
+    border-radius:25px;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.2);
+    box-shadow:0 20px 50px rgba(0,0,0,.3);
+    text-align:center;
+    color:white;
+}
+
+.logo{
+    width:90px;
+    height:90px;
+    margin:auto;
+    border-radius:50%;
+    background:rgba(255,255,255,.15);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+h1{
+    font-size:30px;
+}
+
+p{
+    opacity:.9;
+    margin:10px 0 30px;
+}
+
+a{
+    text-decoration:none;
+}
+
+.btn{
+    display:block;
+    width:100%;
+    padding:18px;
+    margin-top:18px;
+    border-radius:16px;
+    font-size:18px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.call{
+    background:#22c55e;
+    color:white;
+}
+
+.site{
+    background:white;
+    color:#2563eb;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 12px 25px rgba(0,0,0,.3);
+}
+
+.numara{
+    margin-top:8px;
+    font-size:15px;
+    opacity:.9;
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+
+<div class="logo">📞</div>
+
+<h1>Mebsis</h1>
+<p>Size daha hızlı ulaşabilmemiz için aşağıdaki seçeneklerden birini kullanabilirsiniz.</p>
+
+<a class="btn call" href="tel:+905335050656">
+Numaramızı Kaydedin ve Arayın
+<div class="numara">+90 533 505 06 56</div>
+</a>
+
+<a class="btn site" href="https://mebsis.tr/" target="_blank">
+🌐 Web Sitemize Git
+</a>
+
+</div>
+
+</body>
+</html>
