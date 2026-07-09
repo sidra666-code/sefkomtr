@@ -11,137 +11,121 @@
 }
 
 body{
-    background:#081226;
-    min-height:100vh;
+    background:#0f172a;
+    overflow:hidden;
     display:flex;
     justify-content:center;
     align-items:center;
-    overflow:hidden;
-    position:relative;
+    min-height:100vh;
 }
 
-/* Sol üstten sağ alta geçen ince mavi çizgi */
+/* Sol üstten sağ alta geçen ince açık mavi çizgi */
 .line{
     position:absolute;
-    width:180%;
+    width:220%;
     height:2px;
-    background:linear-gradient(90deg,transparent,#7dd3fc,transparent);
-    box-shadow:0 0 10px #7dd3fc;
-    transform:rotate(35deg);
+    background:linear-gradient(90deg,
+        transparent,
+        rgba(125,211,252,.8),
+        transparent);
+    box-shadow:0 0 12px rgba(125,211,252,.6);
+    transform:rotate(25deg);
     top:-20%;
-    left:-120%;
-    animation:slide 10s linear infinite;
+    left:-170%;
+    animation:move 10s linear infinite;
 }
 
-@keyframes slide{
-    0%{
-        left:-120%;
-        top:-20%;
-    }
-    100%{
-        left:40%;
-        top:120%;
-    }
+@keyframes move{
+    from{ left:-170%; }
+    to{ left:100%; }
 }
 
 .card{
     position:relative;
-    z-index:2;
+    z-index:10;
     width:90%;
-    max-width:400px;
-    background:rgba(255,255,255,.06);
-    border:1px solid rgba(125,211,252,.25);
-    backdrop-filter:blur(14px);
+    max-width:420px;
+    background:rgba(15,23,42,.88);
+    border:1px solid rgba(125,211,252,.18);
     border-radius:24px;
-    padding:30px;
-    box-shadow:0 0 25px rgba(125,211,252,.12);
+    padding:32px;
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
 }
 
 .logo{
-    width:72px;
-    height:72px;
-    border-radius:50%;
+    width:78px;
+    height:78px;
     margin:auto;
+    border-radius:50%;
     display:flex;
-    align-items:center;
     justify-content:center;
-    font-size:30px;
+    align-items:center;
+    font-size:34px;
     color:#7dd3fc;
-    border:2px solid #7dd3fc;
-    box-shadow:0 0 16px rgba(125,211,252,.35);
+    border:2px solid rgba(125,211,252,.6);
+    background:rgba(125,211,252,.08);
 }
 
 h1{
     color:#fff;
     text-align:center;
     margin:18px 0 8px;
-    font-size:28px;
+    font-size:30px;
 }
 
-p{
+.desc{
     color:#cbd5e1;
     text-align:center;
     margin-bottom:24px;
-    font-size:14px;
+    font-size:15px;
 }
 
 .btn{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+    display:block;
     text-decoration:none;
-    color:white;
-    background:rgba(255,255,255,.05);
-    border:1px solid rgba(125,211,252,.2);
-    padding:16px 18px;
-    border-radius:16px;
-    margin-bottom:14px;
-    transition:.25s;
+    text-align:center;
+    padding:18px;
+    margin-top:14px;
+    border-radius:18px;
+    color:#fff;
+    font-weight:600;
+    background:rgba(125,211,252,.08);
+    border:1px solid rgba(125,211,252,.35);
+    transition:.3s;
 }
 
 .btn:hover{
-    transform:translateY(-2px);
-    border-color:#7dd3fc;
-    box-shadow:0 0 16px rgba(125,211,252,.25);
-}
-
-.name{
-    font-weight:600;
-    font-size:17px;
-}
-
-.number{
-    font-size:13px;
-    color:#93c5fd;
-    margin-top:3px;
-}
-
-.icon{
-    font-size:22px;
+    transform:translateY(-3px);
+    background:rgba(125,211,252,.14);
+    box-shadow:0 0 18px rgba(125,211,252,.25);
 }
 
 .site{
-    justify-content:center;
-    gap:10px;
     background:linear-gradient(90deg,#2563eb,#38bdf8);
     border:none;
-    font-weight:700;
-    margin-top:8px;
 }
-</style></head><body><div class="line"></div><div class="card"><div class="logo">📇</div><h1>Mebsis</h1>
-<p>Kişileri rehberinize kaydedin veya web sitemizi ziyaret edin.</p><a class="btn" href="selim.vcf" download>
-    <div>
-        <div class="name">Selim Bey</div>
-        <div class="number">+90 533 622 90 50</div>
-    </div>
-    <div class="icon">➕</div>
-</a><a class="btn" href="onur.vcf" download>
-    <div>
-        <div class="name">Onur Bey</div>
-        <div class="number">+90 533 505 06 56</div>
-    </div>
-    <div class="icon">➕</div>
-</a><a class="btn site" href="https://mebsis.tr/" target="_blank">
-    🌐 Web Sitemizi Ziyaret Et
+
+.site:hover{
+    box-shadow:0 0 24px rgba(56,189,248,.35);
+}
+
+.name{
+    font-size:18px;
+    margin-bottom:4px;
+}
+
+.number{
+    font-size:14px;
+    color:#bae6fd;
+}
+</style></head><body><div class="line"></div><div class="card"><div class="logo">📘</div><h1>Mebsis</h1>
+<p class="desc">Kişileri rehberinize kaydedebilir veya web sitemizi ziyaret edebilirsiniz.</p><a href="selim.vcf" class="btn">
+    <div class="name">👤 Selim Bey'i Kaydet</div>
+    <div class="number">+90 533 622 90 50</div>
+</a><a href="onur.vcf" class="btn">
+    <div class="name">👤 Onur Bey'i Kaydet</div>
+    <div class="number">+90 533 505 06 56</div>
+</a><a href="https://mebsis.tr/" target="_blank" class="btn site">
+    🌐 Web Sitemizi Ziyaret Edin
 </a></div></body>
 </html>
