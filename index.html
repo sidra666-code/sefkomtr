@@ -16,95 +16,143 @@
 }
 
 body{
+    overflow:hidden;
     display:flex;
     justify-content:center;
     align-items:center;
     min-height:100vh;
-    background:linear-gradient(-45deg,#0f172a,#1e3a8a,#2563eb,#38bdf8);
-    background-size:400% 400%;
-    animation:bg 10s ease infinite;
+    background:#050816;
 }
 
-@keyframes bg{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
+/* Neon akan çizgiler */
+.line{
+    position:absolute;
+    width:250%;
+    height:3px;
+    background:linear-gradient(90deg,
+    transparent,
+    #00f7ff,
+    #ff00ff,
+    transparent);
+    box-shadow:0 0 20px #00f7ff,0 0 40px #ff00ff;
+    animation:move 6s linear infinite;
+}
+
+.line:nth-child(1){
+    transform:rotate(25deg);
+    top:-20%;
+}
+
+.line:nth-child(2){
+    transform:rotate(-25deg);
+    bottom:-20%;
+    animation-delay:2s;
+}
+
+.line:nth-child(3){
+    transform:rotate(25deg);
+    top:45%;
+    animation-delay:4s;
+}
+
+@keyframes move{
+    from{left:-180%;}
+    to{left:100%;}
 }
 
 .card{
+    position:relative;
+    z-index:5;
     width:90%;
     max-width:420px;
     padding:35px;
-    border-radius:25px;
-    background:rgba(255,255,255,.12);
-    backdrop-filter:blur(20px);
-    border:1px solid rgba(255,255,255,.2);
-    box-shadow:0 20px 50px rgba(0,0,0,.35);
-    text-align:center;
-    color:#fff;
+    border-radius:28px;
+    background:rgba(15,20,40,.65);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(0,255,255,.25);
+    box-shadow:
+    0 0 20px rgba(0,255,255,.3),
+    0 0 60px rgba(255,0,255,.15);
 }
 
 .logo{
     width:90px;
     height:90px;
-    margin:0 auto 20px;
+    margin:auto;
     border-radius:50%;
-    background:rgba(255,255,255,.15);
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
     font-size:42px;
+    color:#00f7ff;
+    border:2px solid #00f7ff;
+    box-shadow:0 0 20px #00f7ff;
 }
 
 h1{
+    color:#fff;
+    text-align:center;
+    margin:20px 0 8px;
     font-size:30px;
-    margin-bottom:10px;
 }
 
 p{
-    opacity:.9;
-    margin-bottom:25px;
-}
-
-a{
-    text-decoration:none;
+    text-align:center;
+    color:#cbd5e1;
+    margin-bottom:30px;
 }
 
 .btn{
     display:block;
-    width:100%;
+    text-decoration:none;
+    margin-top:18px;
     padding:18px;
-    margin-top:16px;
-    border-radius:16px;
-    font-size:18px;
-    font-weight:600;
-    transition:.3s;
-}
-
-.btn:hover{
-    transform:translateY(-4px);
-    box-shadow:0 12px 25px rgba(0,0,0,.3);
+    border-radius:18px;
+    text-align:center;
+    transition:.35s;
 }
 
 .call{
-    background:#22c55e;
-    color:white;
+    background:rgba(0,255,255,.08);
+    border:1px solid #00f7ff;
+    color:#fff;
+    box-shadow:0 0 15px rgba(0,255,255,.3);
+}
+
+.call:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 30px #00f7ff;
 }
 
 .site{
-    background:white;
-    color:#2563eb;
+    background:linear-gradient(90deg,#ff00ff,#00f7ff);
+    color:#fff;
+    font-weight:bold;
+    box-shadow:0 0 25px rgba(255,0,255,.5);
+}
+
+.site:hover{
+    transform:translateY(-5px) scale(1.02);
+}
+
+.isim{
+    font-size:20px;
+    font-weight:700;
 }
 
 .numara{
-    margin-top:8px;
-    font-size:15px;
-    opacity:.9;
+    margin-top:6px;
+    color:#b8f7ff;
+    font-size:14px;
 }
 </style>
 </head>
 
 <body>
+
+<div class="line"></div>
+<div class="line"></div>
+<div class="line"></div>
 
 <div class="card">
 
@@ -112,20 +160,201 @@ a{
 
 <h1>Mebsis</h1>
 
-<p>Lütfen aşağıdaki seçeneklerden birini kullanın.</p>
-
-<a class="btn call" href="tel:+905336229050">
-📱 1. Numarayı Ara
-<div class="numara">+90 533 622 90 50</div>
-</a>
+<p>İletişim kurmak istediğiniz kişiyi seçin.</p>
 
 <a class="btn call" href="tel:+905335050656">
-📱 2. Numarayı Ara
+<div class="isim">👤 Selim Bey</div>
 <div class="numara">+90 533 505 06 56</div>
 </a>
 
+<a class="btn call" href="tel:+905336229050">
+<div class="isim">👤 Onur Bey</div>
+<div class="numara">+90 533 622 90 50</div>
+</a>
+
 <a class="btn site" href="https://mebsis.tr/" target="_blank">
-🌐 Web Sitemize Git
+🌐 Web Sitemizi Ziyaret Edin
+</a>
+
+</div>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mebsis</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    background:#050816;
+}
+
+/* Neon akan çizgiler */
+.line{
+    position:absolute;
+    width:250%;
+    height:3px;
+    background:linear-gradient(90deg,
+    transparent,
+    #00f7ff,
+    #ff00ff,
+    transparent);
+    box-shadow:0 0 20px #00f7ff,0 0 40px #ff00ff;
+    animation:move 6s linear infinite;
+}
+
+.line:nth-child(1){
+    transform:rotate(25deg);
+    top:-20%;
+}
+
+.line:nth-child(2){
+    transform:rotate(-25deg);
+    bottom:-20%;
+    animation-delay:2s;
+}
+
+.line:nth-child(3){
+    transform:rotate(25deg);
+    top:45%;
+    animation-delay:4s;
+}
+
+@keyframes move{
+    from{left:-180%;}
+    to{left:100%;}
+}
+
+.card{
+    position:relative;
+    z-index:5;
+    width:90%;
+    max-width:420px;
+    padding:35px;
+    border-radius:28px;
+    background:rgba(15,20,40,.65);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(0,255,255,.25);
+    box-shadow:
+    0 0 20px rgba(0,255,255,.3),
+    0 0 60px rgba(255,0,255,.15);
+}
+
+.logo{
+    width:90px;
+    height:90px;
+    margin:auto;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:42px;
+    color:#00f7ff;
+    border:2px solid #00f7ff;
+    box-shadow:0 0 20px #00f7ff;
+}
+
+h1{
+    color:#fff;
+    text-align:center;
+    margin:20px 0 8px;
+    font-size:30px;
+}
+
+p{
+    text-align:center;
+    color:#cbd5e1;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:block;
+    text-decoration:none;
+    margin-top:18px;
+    padding:18px;
+    border-radius:18px;
+    text-align:center;
+    transition:.35s;
+}
+
+.call{
+    background:rgba(0,255,255,.08);
+    border:1px solid #00f7ff;
+    color:#fff;
+    box-shadow:0 0 15px rgba(0,255,255,.3);
+}
+
+.call:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 30px #00f7ff;
+}
+
+.site{
+    background:linear-gradient(90deg,#ff00ff,#00f7ff);
+    color:#fff;
+    font-weight:bold;
+    box-shadow:0 0 25px rgba(255,0,255,.5);
+}
+
+.site:hover{
+    transform:translateY(-5px) scale(1.02);
+}
+
+.isim{
+    font-size:20px;
+    font-weight:700;
+}
+
+.numara{
+    margin-top:6px;
+    color:#b8f7ff;
+    font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="line"></div>
+<div class="line"></div>
+<div class="line"></div>
+
+<div class="card">
+
+<div class="logo">📞</div>
+
+<h1>Mebsis</h1>
+
+<p>İletişim kurmak istediğiniz kişiyi seçin.</p>
+
+<a class="btn call" href="tel:+905335050656">
+<div class="isim">👤 Selim Bey</div>
+<div class="numara">+90 533 505 06 56</div>
+</a>
+
+<a class="btn call" href="tel:+905336229050">
+<div class="isim">👤 Onur Bey</div>
+<div class="numara">+90 533 622 90 50</div>
+</a>
+
+<a class="btn site" href="https://mebsis.tr/" target="_blank">
+🌐 Web Sitemizi Ziyaret Edin
 </a>
 
 </div>
