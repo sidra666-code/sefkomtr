@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mebsis</title>
+<title>Mebsis İletişim</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -16,141 +16,153 @@
 }
 
 body{
+    background:#070b1d;
     overflow:hidden;
     display:flex;
     justify-content:center;
     align-items:center;
     min-height:100vh;
-    background:#050816;
 }
 
-/* Neon akan çizgiler */
+/* Neon çapraz çizgiler */
 .line{
     position:absolute;
-    width:250%;
+    width:220%;
     height:3px;
-    background:linear-gradient(90deg,
-    transparent,
-    #00f7ff,
-    #ff00ff,
-    transparent);
-    box-shadow:0 0 20px #00f7ff,0 0 40px #ff00ff;
-    animation:move 6s linear infinite;
+    background:linear-gradient(90deg,transparent,#00eaff,#ff00ff,transparent);
+    box-shadow:0 0 18px #00eaff,0 0 35px #ff00ff;
+    animation:move 7s linear infinite;
 }
 
 .line:nth-child(1){
+    top:15%;
     transform:rotate(25deg);
-    top:-20%;
 }
 
 .line:nth-child(2){
+    bottom:10%;
     transform:rotate(-25deg);
-    bottom:-20%;
-    animation-delay:2s;
-}
-
-.line:nth-child(3){
-    transform:rotate(25deg);
-    top:45%;
-    animation-delay:4s;
+    animation-delay:3.5s;
 }
 
 @keyframes move{
-    from{left:-180%;}
+    from{left:-170%;}
     to{left:100%;}
 }
 
 .card{
     position:relative;
-    z-index:5;
+    z-index:10;
     width:90%;
     max-width:420px;
-    padding:35px;
-    border-radius:28px;
-    background:rgba(15,20,40,.65);
+    background:rgba(10,15,35,.75);
     backdrop-filter:blur(18px);
     border:1px solid rgba(0,255,255,.25);
+    border-radius:25px;
+    padding:30px;
     box-shadow:
-    0 0 20px rgba(0,255,255,.3),
-    0 0 60px rgba(255,0,255,.15);
+    0 0 25px rgba(0,255,255,.25),
+    0 0 50px rgba(255,0,255,.15);
 }
 
 .logo{
-    width:90px;
-    height:90px;
+    width:80px;
+    height:80px;
     margin:auto;
     border-radius:50%;
     display:flex;
-    align-items:center;
     justify-content:center;
-    font-size:42px;
-    color:#00f7ff;
-    border:2px solid #00f7ff;
-    box-shadow:0 0 20px #00f7ff;
+    align-items:center;
+    font-size:35px;
+    color:#00eaff;
+    border:2px solid #00eaff;
+    box-shadow:0 0 20px #00eaff;
 }
 
 h1{
     color:#fff;
     text-align:center;
-    margin:20px 0 8px;
-    font-size:30px;
+    margin:18px 0 8px;
 }
 
-p{
+.desc{
+    color:#b8c5ff;
     text-align:center;
-    color:#cbd5e1;
-    margin-bottom:30px;
+    margin-bottom:25px;
 }
 
-.btn{
-    display:block;
-    text-decoration:none;
-    margin-top:18px;
-    padding:18px;
+.contact{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px;
+    margin-bottom:15px;
     border-radius:18px;
-    text-align:center;
-    transition:.35s;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    transition:.3s;
+}
+
+.contact:hover{
+    transform:scale(1.03);
+    border-color:#00eaff;
+    box-shadow:0 0 20px rgba(0,255,255,.35);
+}
+
+.name{
+    color:#fff;
+    font-weight:600;
+    font-size:18px;
+}
+
+.number{
+    color:#8be9ff;
+    font-size:14px;
+    margin-top:4px;
 }
 
 .call{
-    background:rgba(0,255,255,.08);
-    border:1px solid #00f7ff;
+    width:52px;
+    height:52px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#00eaff,#009dff);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
     color:#fff;
-    box-shadow:0 0 15px rgba(0,255,255,.3);
+    font-size:24px;
+    box-shadow:0 0 20px #00eaff;
+    transition:.3s;
 }
 
 .call:hover{
-    transform:translateY(-5px);
-    box-shadow:0 0 30px #00f7ff;
+    transform:rotate(10deg) scale(1.1);
 }
 
 .site{
-    background:linear-gradient(90deg,#ff00ff,#00f7ff);
-    color:#fff;
-    font-weight:bold;
+    display:block;
+    margin-top:10px;
+    text-align:center;
+    text-decoration:none;
+    padding:18px;
+    border-radius:18px;
+    background:linear-gradient(90deg,#ff00ff,#00eaff);
+    color:white;
+    font-weight:700;
+    font-size:18px;
     box-shadow:0 0 25px rgba(255,0,255,.5);
+    transition:.3s;
 }
 
 .site:hover{
-    transform:translateY(-5px) scale(1.02);
-}
-
-.isim{
-    font-size:20px;
-    font-weight:700;
-}
-
-.numara{
-    margin-top:6px;
-    color:#b8f7ff;
-    font-size:14px;
+    transform:translateY(-3px);
 }
 </style>
-</head>
 
+</head>
 <body>
 
-<div class="line"></div>
 <div class="line"></div>
 <div class="line"></div>
 
@@ -160,200 +172,25 @@ p{
 
 <h1>Mebsis</h1>
 
-<p>İletişim kurmak istediğiniz kişiyi seçin.</p>
+<p class="desc">İletişim kurmak istediğiniz kişiyi seçin.</p>
 
-<a class="btn call" href="tel:+905335050656">
-<div class="isim">👤 Selim Bey</div>
-<div class="numara">+90 533 505 06 56</div>
-</a>
-
-<a class="btn call" href="tel:+905336229050">
-<div class="isim">👤 Onur Bey</div>
-<div class="numara">+90 533 622 90 50</div>
-</a>
-
-<a class="btn site" href="https://mebsis.tr/" target="_blank">
-🌐 Web Sitemizi Ziyaret Edin
-</a>
-
+<div class="contact">
+<div>
+<div class="name">Selim Bey</div>
+<div class="number">+90 533 505 06 56</div>
+</div>
+<a class="call" href="tel:+905335050656">📞</a>
 </div>
 
-</body>
-</html><!DOCTYPE html>
-<html lang="tr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mebsis</title>
+<div class="contact">
+<div>
+<div class="name">Onur Bey</div>
+<div class="number">+90 533 622 90 50</div>
+</div>
+<a class="call" href="tel:+905336229050">📞</a>
+</div>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
-
-body{
-    overflow:hidden;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
-    background:#050816;
-}
-
-/* Neon akan çizgiler */
-.line{
-    position:absolute;
-    width:250%;
-    height:3px;
-    background:linear-gradient(90deg,
-    transparent,
-    #00f7ff,
-    #ff00ff,
-    transparent);
-    box-shadow:0 0 20px #00f7ff,0 0 40px #ff00ff;
-    animation:move 6s linear infinite;
-}
-
-.line:nth-child(1){
-    transform:rotate(25deg);
-    top:-20%;
-}
-
-.line:nth-child(2){
-    transform:rotate(-25deg);
-    bottom:-20%;
-    animation-delay:2s;
-}
-
-.line:nth-child(3){
-    transform:rotate(25deg);
-    top:45%;
-    animation-delay:4s;
-}
-
-@keyframes move{
-    from{left:-180%;}
-    to{left:100%;}
-}
-
-.card{
-    position:relative;
-    z-index:5;
-    width:90%;
-    max-width:420px;
-    padding:35px;
-    border-radius:28px;
-    background:rgba(15,20,40,.65);
-    backdrop-filter:blur(18px);
-    border:1px solid rgba(0,255,255,.25);
-    box-shadow:
-    0 0 20px rgba(0,255,255,.3),
-    0 0 60px rgba(255,0,255,.15);
-}
-
-.logo{
-    width:90px;
-    height:90px;
-    margin:auto;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:42px;
-    color:#00f7ff;
-    border:2px solid #00f7ff;
-    box-shadow:0 0 20px #00f7ff;
-}
-
-h1{
-    color:#fff;
-    text-align:center;
-    margin:20px 0 8px;
-    font-size:30px;
-}
-
-p{
-    text-align:center;
-    color:#cbd5e1;
-    margin-bottom:30px;
-}
-
-.btn{
-    display:block;
-    text-decoration:none;
-    margin-top:18px;
-    padding:18px;
-    border-radius:18px;
-    text-align:center;
-    transition:.35s;
-}
-
-.call{
-    background:rgba(0,255,255,.08);
-    border:1px solid #00f7ff;
-    color:#fff;
-    box-shadow:0 0 15px rgba(0,255,255,.3);
-}
-
-.call:hover{
-    transform:translateY(-5px);
-    box-shadow:0 0 30px #00f7ff;
-}
-
-.site{
-    background:linear-gradient(90deg,#ff00ff,#00f7ff);
-    color:#fff;
-    font-weight:bold;
-    box-shadow:0 0 25px rgba(255,0,255,.5);
-}
-
-.site:hover{
-    transform:translateY(-5px) scale(1.02);
-}
-
-.isim{
-    font-size:20px;
-    font-weight:700;
-}
-
-.numara{
-    margin-top:6px;
-    color:#b8f7ff;
-    font-size:14px;
-}
-</style>
-</head>
-
-<body>
-
-<div class="line"></div>
-<div class="line"></div>
-<div class="line"></div>
-
-<div class="card">
-
-<div class="logo">📞</div>
-
-<h1>Mebsis</h1>
-
-<p>İletişim kurmak istediğiniz kişiyi seçin.</p>
-
-<a class="btn call" href="tel:+905335050656">
-<div class="isim">👤 Selim Bey</div>
-<div class="numara">+90 533 505 06 56</div>
-</a>
-
-<a class="btn call" href="tel:+905336229050">
-<div class="isim">👤 Onur Bey</div>
-<div class="numara">+90 533 622 90 50</div>
-</a>
-
-<a class="btn site" href="https://mebsis.tr/" target="_blank">
+<a class="site" href="https://mebsis.tr/" target="_blank">
 🌐 Web Sitemizi Ziyaret Edin
 </a>
 
